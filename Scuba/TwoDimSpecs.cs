@@ -43,24 +43,26 @@ namespace Scuba
             Assert.IsTrue(newEndPoint.Y == 3);
         }
 
-        //[TestMethod]
-        //public void RotateLineIn2D()
-        //{
-        //    //Arrange
-        //    Rotator rotator = new Rotator();
-        //    Point p1 = new Point(0, 0);
-        //    Point p2 = new Point(1, 1);
-        //    Line line = new Line(p1, p2);
+        [TestMethod]
+        public void RotateLineIn2D()
+        {
+            //Arrange
+            Rotator rotator = new Rotator();
+            Point p1 = new Point(0, 0);
+            Point p2 = new Point(1, 1);
+            Line line = new Line(p1, p2);
 
-        //    //Act
-        //    rotator.Rotate(line, 90);
+            //Act
+            Line newLine = rotator.Rotate(line, 90);
+            Point newStartPoint = newLine.GetStartPoint();
+            Point newEndPoint = newLine.GetEndPoint();
 
-        //    //Assert
-        //    Assert.IsTrue(line.GetX1 == 0);
-        //    Assert.IsTrue(line.GetY1 == 0);
-        //    Assert.IsTrue(line.GetX2 == 1);
-        //    Assert.IsTrue(line.GetY2 == -1);
-        //}
+            //Assert
+            Assert.IsTrue(newStartPoint.X == 0);
+            Assert.IsTrue(newStartPoint.Y == 0);
+            Assert.IsTrue(newEndPoint.X == 1);
+            Assert.IsTrue(newEndPoint.Y == -1);
+        }
 
         //[TestMethod]
         //public void ReflectPointIn2D()
