@@ -32,13 +32,15 @@ namespace Scuba
             Line line = new Line(p1, p2);
 
             //Act
-            //translator.Translate(line, 2, 2);
+            Line newLine = translator.Translate(line, 2, 2);
+            Point newStartPoint = newLine.GetStartPoint();
+            Point newEndPoint = newLine.GetEndPoint();
 
             //Assert
-            //Assert.IsTrue(Line. == 2);
-            //Assert.IsTrue(Line.GetY1 == 2);
-            //Assert.IsTrue(Line.GetX2 == 3);
-            //Assert.IsTrue(Line.GetY2 == 3);
+            Assert.IsTrue(newStartPoint.X == 2);
+            Assert.IsTrue(newStartPoint.Y == 2);
+            Assert.IsTrue(newEndPoint.X == 3);
+            Assert.IsTrue(newEndPoint.Y == 3);
         }
 
         //[TestMethod]

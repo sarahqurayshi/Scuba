@@ -12,5 +12,15 @@ namespace Scuba
             this.p1 = p1;
             this.p2 = p2;
         }
+
+        public Point GetEndPoint()
+        {
+            return p2;
+        }
+
+        public Point GetStartPoint()
+        {
+            return p1;
+        }
     }
 }
