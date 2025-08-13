@@ -44,7 +44,7 @@ namespace Scuba
         }
 
         [TestMethod]
-        public void RotateLineIn2D()
+        public void RotateLineIn2D_Clockwise()
         {
             //Arrange
             Rotator rotator = new Rotator();
@@ -63,6 +63,28 @@ namespace Scuba
             Assert.IsTrue(newEndPoint.X == 1);
             Assert.IsTrue(newEndPoint.Y == -1);
         }
+
+        [TestMethod]
+        public void RotateLineIn2D_AntiClockwise()
+        {
+            //Arrange
+            Rotator rotator = new Rotator();
+            Point p1 = new Point(0, 0);
+            Point p2 = new Point(1, 1);
+            Line line = new Line(p1, p2);
+
+            //Act
+            Line newLine = rotator.Rotate(line, -90);
+            Point newStartPoint = newLine.GetStartPoint();
+            Point newEndPoint = newLine.GetEndPoint();
+
+            //Assert
+            Assert.IsTrue(newStartPoint.X == 0);
+            Assert.IsTrue(newStartPoint.Y == 0);
+            Assert.IsTrue(newEndPoint.X == -1);
+            Assert.IsTrue(newEndPoint.Y == 1);
+        }
+
 
         //[TestMethod]
         //public void ReflectPointIn2D()
